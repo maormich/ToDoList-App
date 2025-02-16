@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- תמונה -->
+        <ImageView
+            android:id="@+id/image_view_task"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_placeholder_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- טקסט לכותרת המשימה -->
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Task Title"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toEndOf="@id/image_view_task"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <!-- טקסט לתיאור המשימה -->
+        <TextView
+            android:id="@+id/text_view_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Task Description"
+            android:textSize="21sp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:scrollHorizontally="false"
+            app:layout_constraintStart_toEndOf="@id/image_view_task"
+            app:layout_constraintTop_toBottomOf="@id/text_view_title"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_task"
+            app:layout_constraintBottom_toTopOf="@id/text_view_deadline"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <!-- טקסט לדדליין -->
+        <TextView
+            android:id="@+id/text_view_deadline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Due Date"
+            android:textSize="21sp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintStart_toEndOf="@id/image_view_task"
+            app:layout_constraintTop_toBottomOf="@id/text_view_description"
+            app:layout_constraintEnd_toStartOf="@id/checkbox_task"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <!-- CheckBox -->
+        <CheckBox
+            android:id="@+id/checkbox_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
